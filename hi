@@ -24,6 +24,10 @@ local U = UI.New({
     Title = "Upgrades"
 })
 
+local P = UI.New({
+    Title = "Pets"
+})
+
 
 B = F.Toggle({
     Text = "Auto Tap",
@@ -131,7 +135,7 @@ B = U.Button({
     end
 })
 
-Page.Toggle({
+B = P.Toggle({
     Text = "Auto Equip Best",
     Callback = function(bool)
             getgenv().AutoEquipBest = bool
@@ -146,8 +150,8 @@ Page.Toggle({
     Enabled = true
 })
 
-Page.Button({
-    Text = "Click Me!",
+B = P.Button({
+    Text = "Equip Best",
     Callback = function()
         game:GetService("ReplicatedStorage").Remotes.EquipBest:InvokeServer()    
     end
