@@ -1,0 +1,154 @@
+getgenv().AutoTap = false;
+getgenv().AutoRebirths = false;
+getgenv().AutoEquipBest = false;
+getgenv().BuyEgg = false;
+
+local Material = loadstring(game:HttpGet("https://raw.githubusercontent.com/Kinlei/MaterialLua/master/Module.lua"))()
+
+local X = Material.Load({
+    Title = "[Stormzzys Scripts] </> Tapping Legends X",
+    Style = 1,
+    SizeX = 370,
+    SizeY = 300,
+    Theme = "Dark", --light dark aqua mocha jester
+    ColorOverrides = {
+		NavBarAccent = Color3.fromRGB(130,130,130)
+    }
+})
+
+local F = UI.New({
+    Title = "Farming"
+})
+
+local U = UI.New({
+    Title = "Upgrades"
+})
+
+
+B = F.Toggle({
+    Text = "Auto Tap",
+    Callback = function(value)
+            getgenv().AutoTap = value
+    print('Auto Tap Is', value)
+    spawn(function()
+        while AutoTap == true do
+            game:GetService("ReplicatedStorage").Remotes.Tap:FireServer()
+            wait()
+        end
+    end)
+    end,
+    Enabled = true
+})
+
+B = F.Button({
+    Text = "Anti Idle",
+    Callback = function()
+            game:service'Players'.LocalPlayer.Idled:connect(function()
+    bb:CaptureController()bb:ClickButton2(Vector2.new())
+    ab.Text="Roblox tried to kick u but i kicked him instead"wait(2)ab.Text="Status : Active"end)  
+    end
+})
+
+B = U.Button({
+    Text = "Free Auto Clicker",
+    Callback = function()
+            local ohString1 = "Ruby"
+    local ohString2 = "FreeAutoClicker"
+    
+    game:GetService("ReplicatedStorage").Remotes.Upgrade:InvokeServer(ohString1, ohString2)  
+    end
+})
+
+B = U.Button({
+    Text = "Free Auto Clicker",
+    Callback = function()
+            local ohString1 = "Ruby"
+    local ohString2 = "FreeAutoClicker"
+    
+    game:GetService("ReplicatedStorage").Remotes.Upgrade:InvokeServer(ohString1, ohString2)  
+    end
+})
+
+
+B = U.Button({
+    Text = "Auto Clicker Multiplierr",
+    Callback = function()
+    local ohString1 = "Ruby"
+    local ohString2 = "AutoClickerMultiplier"
+    
+    game:GetService("ReplicatedStorage").Remotes.Upgrade:InvokeServer(ohString1, ohString2)
+    end
+})
+
+
+B = U.Button({
+    Text = "Walk Speed",
+    Callback = function()
+        local ohString1 = "Ruby"
+    local ohString2 = "WalkSpeed"
+    
+    game:GetService("ReplicatedStorage").Remotes.Upgrade:InvokeServer(ohString1, ohString2)
+    end
+})
+
+B = U.Button({
+    Text = "Critical Chancesd",
+    Callback = function()
+        local ohString1 = "Ruby"
+    local ohString2 = "CriticalChances"
+    
+    game:GetService("ReplicatedStorage").Remotes.Upgrade:InvokeServer(ohString1, ohString2)
+    end
+})
+
+B = U.Button({
+    Text = "Pet Storage",
+    Callback = function()
+        local ohString1 = "Ruby"
+    local ohString2 = "PetStorage"
+    
+    game:GetService("ReplicatedStorage").Remotes.Upgrade:InvokeServer(ohString1, ohString2)
+    end
+})
+
+B = U.Button({
+    Text = "More Rebirths",
+    Callback = function()
+        local ohString1 = "Ruby"
+    local ohString2 = "MoreRebirths"
+    
+    game:GetService("ReplicatedStorage").Remotes.Upgrade:InvokeServer(ohString1, ohString2)
+    end
+})
+
+B = U.Button({
+    Text = "Tap Multiplier",
+    Callback = function()
+        local ohString1 = "Ruby"
+    local ohString2 = "TapMultiplier"
+    
+    game:GetService("ReplicatedStorage").Remotes.Upgrade:InvokeServer(ohString1, ohString2)
+    end
+})
+
+Page.Toggle({
+    Text = "Auto Equip Best",
+    Callback = function(bool)
+            getgenv().AutoEquipBest = bool
+    print('Auto Tap Is', bool)
+    spawn(function()
+        while AutoEquipBest == true do
+            game:GetService("ReplicatedStorage").Remotes.EquipBest:InvokeServer()
+            wait(1)
+        end
+    end)
+    end,
+    Enabled = true
+})
+
+Page.Button({
+    Text = "Click Me!",
+    Callback = function()
+        game:GetService("ReplicatedStorage").Remotes.EquipBest:InvokeServer()    
+    end
+})
