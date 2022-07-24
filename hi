@@ -16,7 +16,7 @@ local X = Material.Load({
     }
 })
 
-local F = UI.New({
+local F = X.New({
     Title = "Farming"
 })
 
