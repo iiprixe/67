@@ -32,7 +32,7 @@ local P = UI.New({
 B = F.Toggle({
     Text = "Auto Tap",
     Callback = function(value)
-            getgenv().AutoTap = value
+            getgenv().AutoTap = value 
     print('Auto Tap Is', value)
     spawn(function()
         while AutoTap == true do
