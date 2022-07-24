@@ -20,11 +20,11 @@ local F = X.New({
     Title = "Farming"
 })
 
-local U = UI.New({
+local U = X.New({
     Title = "Upgrades"
 })
 
-local P = UI.New({
+local P = X.New({
     Title = "Pets"
 })
 
@@ -32,7 +32,7 @@ local P = UI.New({
 B = F.Toggle({
     Text = "Auto Tap",
     Callback = function(value)
-            getgenv().AutoTap = value 
+            getgenv().AutoTap = value
     print('Auto Tap Is', value)
     spawn(function()
         while AutoTap == true do
@@ -41,7 +41,7 @@ B = F.Toggle({
         end
     end)
     end,
-    Enabled = true
+    Enabled = false
 })
 
 B = F.Button({
@@ -147,7 +147,7 @@ B = P.Toggle({
         end
     end)
     end,
-    Enabled = true
+    Enabled = false
 })
 
 B = P.Button({
